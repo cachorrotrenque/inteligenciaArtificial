@@ -1,0 +1,32 @@
+public class BusquedaExhaustiva {
+
+    // Definimos las posiciones pre establecidas
+    private static final int A = 10; // Posición de montaje objetivo "A"
+    private static final int B = 0;  // Posición inicial "B"
+    private static final int INCREMENTO = 1; // Incremento en cada movimiento
+
+    public static void main(String[] args) {
+        int posicionActual = B;
+
+        // Búsqueda hacia la derecha
+        while (posicionActual <= A) {
+            System.out.println("Posición actual: " + posicionActual);
+            if (posicionActual == A) {
+                System.out.println("¡Posición A encontrada!");
+                break;
+            }
+            posicionActual += INCREMENTO;
+        }
+
+        // Búsqueda hacia la izquierda (si fuera necesario)
+        posicionActual = B;
+        while (posicionActual >= -A) {
+            System.out.println("Posición actual: " + posicionActual);
+            if (posicionActual == A) {
+                System.out.println("¡Posición A encontrada!");
+                break;
+            }
+            posicionActual -= INCREMENTO;
+        }
+    }
+}
