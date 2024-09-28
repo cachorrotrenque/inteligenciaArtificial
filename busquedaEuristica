@@ -1,0 +1,27 @@
+public class BusquedaHeuristica {
+
+    // Definimos las posiciones para simplificar
+    private static final int A = 10; // Posición de montaje objetivo "A"
+    private static final int B = 0;  // Posición inicial "B"
+
+    public static void main(String[] args) {
+        int posicionActual = B;
+
+        while (posicionActual != A) {
+            // Calcular la heurística (distancia a la meta)
+            int heuristica = A - posicionActual;
+
+            // Imprimir la posición actual y la heurística
+            System.out.println("Posición actual: " + posicionActual + ", Heurística: " + heuristica);
+
+            // Moverse en la dirección que acerque a la meta
+            if (heuristica > 0) {
+                posicionActual++;
+            } else if (heuristica < 0) {
+                posicionActual--;
+            }
+        }
+
+        System.out.println("¡Posición A encontrada!");
+    }
+}
